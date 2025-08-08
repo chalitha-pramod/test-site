@@ -42,7 +42,10 @@
                         <a class="nav-link" href="#about">About Us</a>
                         <a class="nav-link" href="#tours">Tours and Packages</a>
                         <a class="nav-link" href="#excursions">Excursions</a>
-                        <a class="nav-link" href="#excursions">Excursions</a>
+                        <button class="btn btn-menu" id="desktopMenuBtn">
+                            <i class="fas fa-bars"></i>
+                           
+                        </button>
                     </div>
                     <a href="#contact" class="btn btn-inquiries d-none d-lg-block">Inquiry</a>
                     
@@ -51,10 +54,42 @@
                         <a class="nav-link" href="#tours">Tours and Packages</a>
                         <a class="nav-link" href="#excursions">Excursions</a>
                         <a href="#contact" class="btn btn-inquiries mt-3">Inquiry</a>
+                        
                     </div>
                 </div>
             </div>
         </nav>
+
+    <!-- Right Side Menu -->
+    <div class="right-menu-overlay" id="rightMenuOverlay">
+        <div class="right-menu" id="rightMenu">
+            <div class="right-menu-header">
+                <h3 class="right-menu-title">Menu</h3>
+                <button class="right-menu-close" id="rightMenuClose">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="right-menu-content">
+                <ul class="right-menu-list">
+                    <li><a href="#about" class="right-menu-link">About Us</a></li>
+                    <li><a href="#tours" class="right-menu-link">Tours & Packages</a></li>
+                    <li><a href="#excursions" class="right-menu-link">Excursions</a></li>
+                    <li><a href="#adventure-activities" class="right-menu-link">Adventure Activities</a></li>
+                    <li><a href="#testimonials" class="right-menu-link">Testimonials</a></li>
+                    <li><a href="#blog" class="right-menu-link">Blog</a></li>
+                    <li><a href="#contact" class="right-menu-link">Contact</a></li>
+                </ul>
+                <div class="right-menu-footer">
+                    <div class="right-menu-social">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Hero Section -->
     <section class="hero-section">
@@ -66,7 +101,7 @@
             <div class="row">
                 <div class="col-lg-8">
                     <div class="hero-content">
-                        <h1 class="hero-heading">A land full of magical colors will captivate you, everywhere you go!</h1>
+                        <h1 class="hero-heading mt-5">A land full of magical colors will captivate you, everywhere you go!</h1>
                         <p class="hero-description">
                             Imagine yourself stepping into the enchanting world of Sri Lanka, where every moment is meticulously crafted just for you. At Exemplary Voyages, our Sri Lanka Bespoke Travel designs unveil the island's hidden gems, from secluded beaches with crystal-clear waters to vibrant local markets brimming with culture. Guided by our expert Travel Designers, you'll journey through breathtaking landscapes and immerse yourself in unforgettable experiences. Your adventure is not just a vacation—it's a story waiting to be told. Ready to write your chapter?
                         </p>
@@ -123,7 +158,7 @@
     </section>
 
     <!-- Fourth Section - Carousel -->
-    <section class="ftco-section mt-5 mb-5">
+    <section class="ftco-section" style="background-color: #f8f9fa;">
         <div class="container">
             <!-- Top Section - Text Content -->
            
@@ -132,14 +167,10 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="hero-slider-wrapper">
-                        <!-- Main Image -->
+                        <!-- Main Image (Left) -->
                         <div class="hero-main-slide" id="heroMainSlide" style="background-image: url('https://images.unsplash.com/photo-1549366021-9f761d450615?w=1400&h=800&fit=crop');">
                             <div class="hero-slide-overlay" id="heroMainOverlay">
                                 <div class="hero-slide-content">
-                                    <p class="hero-slide-description">
-                                        Embark on a wild adventure amidst pristine landscapes, encountering diverse flora and fauna. Nature's wonders await in this immersive journey of discovery and awe.
-                                    </p>
-                                    <a href="#" class="btn btn-explore-wild">Explore the Sri Lankan wild</a>
                                 </div>
                                 <div class="hero-slide-title">
                                     <h2>WILD LIFE</h2>
@@ -148,8 +179,8 @@
                             </div>
                         </div>
 
-                        <!-- Next Slide Preview -->
-                        
+                        <!-- Second Image (Right) -->
+                       
 
                         <!-- Side Navigation Arrows -->
                         <div class="hero-nav-arrows">
@@ -165,8 +196,7 @@
             </div>
         </div>
     </section>
-
-    <!-- Fifth Section - Travel Packages -->
+<!-- Fifth Section - Travel Packages -->
     <section class="packages-section" id="tours">
         <div class="container">
             <!-- Text Content -->
@@ -186,6 +216,15 @@
                     </div>
                 </div>
             </div>
+            
+            
+        </div>
+    </section>
+
+    <!-- Fifth Section - Travel Packages -->
+    <section class="packages-sectioncard" id="tours">
+        <div class="container">
+            
             
             <!-- Package Cards -->
             <div class="row">
@@ -393,82 +432,13 @@
                 </div>
             </div>
             
-            <!-- Second Row - Masonry Style Image Grid -->
-            <div class="instagram-masonry-grid">
-                <div class="instagram-column">
-                    <div class="instagram-photo tall">
-                        <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=600&fit=crop" alt="Aerial view of tropical beach with turquoise water and forest" class="instagram-img">
-                        <div class="instagram-overlay">
-                            <i class="fab fa-instagram"></i>
-                        </div>
-                    </div>
-                    <div class="instagram-photo short">
-                        <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=300&fit=crop" alt="People in canoes paddling down a river surrounded by jungle" class="instagram-img">
-                        <div class="instagram-overlay">
-                            <i class="fab fa-instagram"></i>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="instagram-column">
-                    <div class="instagram-photo medium">
-                        <img src="https://images.unsplash.com/photo-1549366021-9f761d450615?w=400&h=500&fit=crop" alt="Aerial view of tropical beach with turquoise water and forest" class="instagram-img">
-                        <div class="instagram-overlay">
-                            <i class="fab fa-instagram"></i>
-                        </div>
-                    </div>
-                    <div class="instagram-photo tall">
-                        <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=600&fit=crop" alt="Person with backpack on rocky outcrop with scenic landscape" class="instagram-img">
-                        <div class="instagram-overlay">
-                            <i class="fab fa-instagram"></i>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="instagram-column">
-                    <div class="instagram-photo short">
-                        <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=300&fit=crop" alt="Sandy beach with palm trees and thatched hut" class="instagram-img">
-                        <div class="instagram-overlay">
-                            <i class="fab fa-instagram"></i>
-                        </div>
-                    </div>
-                    <div class="instagram-photo medium">
-                        <img src="https://images.unsplash.com/photo-1549366021-9f761d450615?w=400&h=500&fit=crop" alt="Mountain peak with panoramic view" class="instagram-img">
-                        <div class="instagram-overlay">
-                            <i class="fab fa-instagram"></i>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="instagram-column">
-                    <div class="instagram-photo tall">
-                        <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=600&fit=crop" alt="Tropical waterfall in lush forest" class="instagram-img">
-                        <div class="instagram-overlay">
-                            <i class="fab fa-instagram"></i>
-                        </div>
-                    </div>
-                    <div class="instagram-photo short">
-                        <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=300&fit=crop" alt="Sunset over ocean waves" class="instagram-img">
-                        <div class="instagram-overlay">
-                            <i class="fab fa-instagram"></i>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="instagram-column">
-                    <div class="instagram-photo medium">
-                        <img src="https://images.unsplash.com/photo-1549366021-9f761d450615?w=400&h=500&fit=crop" alt="Ancient temple ruins in jungle" class="instagram-img">
-                        <div class="instagram-overlay">
-                            <i class="fab fa-instagram"></i>
-                        </div>
-                    </div>
-                    <div class="instagram-photo tall">
-                        <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=600&fit=crop" alt="Tea plantation on rolling hills" class="instagram-img">
-                        <div class="instagram-overlay">
-                            <i class="fab fa-instagram"></i>
-                        </div>
-                    </div>
-                </div>
+            <!-- Second Row - Image Grid -->
+            <div class="row insta-grid">
+                <div class="col"><img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&q=80" alt="Beach"></div>
+                <div class="col"><img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&q=80" alt="Tropical Coast"></div>
+                <div class="col"><img src="https://images.unsplash.com/photo-1523413651479-597eb2da0ad6?w=800&q=80" alt="Canoe Ride"></div>
+                <div class="col"><img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=800&q=80" alt="Mountain View"></div>
+                <div class="col"><img src="https://images.unsplash.com/photo-1493558103817-58b2924bce98?w=800&q=80" alt="Beach Resort"></div>
             </div>
             
 
@@ -636,7 +606,7 @@
                     
                     <div class="col-lg-4 mb-3">
                         <div class="footer-copyright">
-                            <p class="copyright-text">© 2024All rights reserved</p>
+                            <p class="copyright-text">© 2025 All rights reserved</p>
                             <p class="design-credit">Concept & Design</p>
                         </div>
                     </div>
@@ -738,6 +708,48 @@
         setInterval(() => {
             changeExcursionSlide(1);
         }, 5000);
+    </script>
+    
+    <!-- Right Side Menu JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const desktopMenuBtn = document.getElementById('desktopMenuBtn');
+            const rightMenuOverlay = document.getElementById('rightMenuOverlay');
+            const rightMenu = document.getElementById('rightMenu');
+            const rightMenuClose = document.getElementById('rightMenuClose');
+            
+            // Open menu
+            desktopMenuBtn.addEventListener('click', function() {
+                rightMenuOverlay.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
+            
+            // Close menu
+            function closeMenu() {
+                rightMenuOverlay.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+            
+            rightMenuClose.addEventListener('click', closeMenu);
+            rightMenuOverlay.addEventListener('click', function(e) {
+                if (e.target === rightMenuOverlay) {
+                    closeMenu();
+                }
+            });
+            
+            // Close menu on escape key
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && rightMenuOverlay.classList.contains('active')) {
+                    closeMenu();
+                }
+            });
+            
+            // Close menu when clicking on menu links
+            const menuLinks = document.querySelectorAll('.right-menu-link');
+            menuLinks.forEach(link => {
+                link.addEventListener('click', closeMenu);
+            });
+        });
     </script>
 </body>
 </html> 

@@ -104,8 +104,8 @@ body {
     background: transparent;
     border: 2px solid var(--white);
     color: var(--white);
-    border-radius: 8px;
-    padding: 0.5rem 1.5rem;
+    border-radius: 20px;
+    padding: 0.2rem 1.5rem;
     font-weight: 500;
     transition: all 0.3s ease;
 }
@@ -291,8 +291,8 @@ body {
     background: var(--white);
     color: var(--text-dark);
     border: none;
-    border-radius: 8px;
-    padding: 1rem 2.5rem;
+    border-radius: 5px;
+    padding: 0.2rem 1.5rem;
     font-weight: 600;
     font-size: 1.1rem;
     transition: all 0.3s ease;
@@ -381,8 +381,8 @@ body {
     background: var(--white);
     color: var(--text-dark);
     border: 1px solid #e5e7eb;
-    border-radius: 8px;
-    padding: 0.75rem 2rem;
+    border-radius: 5px;
+    padding: 0.2rem 1.5rem;
     font-weight: 500;
     font-size: 1rem;
     transition: all 0.3s ease;
@@ -702,6 +702,12 @@ body {
 }
 
 /* Fifth Section - Travel Packages */
+.packages-sectioncard {
+    background: #ffffff;
+    padding: 5rem 0;
+    color: var(--text-dark);
+    
+}
 .packages-section {
     background: #f8f9fa;
     padding: 5rem 0;
@@ -740,21 +746,21 @@ body {
 /* Package Cards */
 .package-card {
     background: var(--white);
-    border-radius: 12px;
+    border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
     transition: all 0.3s ease;
     height: 100%;
+    border: 1px solid #ffffff;
 }
 
 .package-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
 }
 
 .package-image {
     position: relative;
-    height: 250px;
+    height: 280px;
     overflow: hidden;
 }
 
@@ -770,7 +776,7 @@ body {
 }
 
 .package-content {
-    padding: 1.5rem;
+    padding: 1.25rem;
 }
 
 .package-price {
@@ -778,32 +784,35 @@ body {
 }
 
 .price-label {
-    font-size: 0.9rem;
-    color: var(--text-light);
+    font-size: 0.8rem;
+    color: #6b7280;
     margin-bottom: 0.25rem;
     font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
 .price-amount {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     font-weight: 700;
     color: var(--text-dark);
     margin-bottom: 0.25rem;
 }
 
 .package-duration {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     color: var(--text-dark);
-    font-weight: 500;
+    font-weight: 600;
+    letter-spacing: 0.5px;
 }
 
 .package-title {
     font-family: 'Playfair Display', serif;
     font-weight: 400;
     font-style: italic;
-    font-size: 1.2rem;
-    color: var(--text-light);
-    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+    color: #6b7280;
+    margin-bottom: 1.25rem;
     line-height: 1.4;
 }
 
@@ -811,21 +820,21 @@ body {
     background: #f3f4f6;
     color: var(--text-dark);
     border: none;
-    border-radius: 8px;
-    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    padding: 0.6rem 1.25rem;
     font-weight: 500;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     transition: all 0.3s ease;
     text-decoration: none;
     display: inline-block;
-    width: 100%;
+    width: 70%;
     text-align: center;
 }
 
 .btn-explore-tour:hover {
-    background: var(--accent-color);
-    color: var(--white);
-    transform: translateY(-2px);
+    background: #e5e7eb;
+    color: var(--text-dark);
+    transform: translateY(-1px);
 }
 
 /* Sixth Section - Excursions */
@@ -1328,44 +1337,43 @@ body {
 
 /* Ninth Section - Blog */
 .blog-section {
-    background: #f8f9fa;
+    background: #ffffff;
     padding: 5rem 0;
     color: var(--text-dark);
 }
 
 .blog-subtitle {
-    font-size: 1.1rem;
-    color: var(--accent-color);
+    font-size: 0.9rem;
+    color: #ff6b35;
     margin-bottom: 1rem;
     font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .blog-heading {
     font-family: 'Playfair Display', serif;
     font-weight: 700;
-    font-size: 3rem;
+    font-size: 2.5rem;
     line-height: 1.2;
     color: var(--text-dark);
     margin-bottom: 3rem;
 }
 
 .blog-card {
-    background: var(--white);
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    background:#ffffff;
     transition: all 0.3s ease;
     height: 100%;
 }
 
 .blog-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
 }
 
 .blog-image {
     position: relative;
-    height: 250px;
+    height: 280px;
     overflow: hidden;
 }
 
@@ -1381,32 +1389,48 @@ body {
 }
 
 .blog-content {
-    padding: 1.5rem;
+    padding: 1.25rem;
 }
 
 .blog-category {
-    font-size: 0.9rem;
-    color: var(--text-light);
+    font-size: 0.8rem;
+    color: #6b7280;
     margin-bottom: 1rem;
     font-weight: 500;
-    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .blog-title {
-    font-size: 1.2rem;
-    font-weight: 600;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    font-weight: 400;
     color: var(--text-dark);
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.25rem;
     line-height: 1.4;
 }
 
 .blog-link {
     color: var(--text-dark);
     text-decoration: none;
-    font-weight: 500;
-    font-size: 0.95rem;
+    font-weight: 600;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
     position: relative;
     transition: color 0.3s ease;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+}
+
+.blog-link::before {
+    content: '';
+    width: 100%;
+    height: 1px;
+    background: var(--text-dark);
+    transition: width 0.3s ease;
 }
 
 .blog-link::after {
@@ -1415,14 +1439,20 @@ body {
     bottom: -2px;
     left: 0;
     width: 100%;
-    height: 2px;
-    background: var(--accent-color);
+    height: 1px;
+    background: var(--text-dark);
+    background-image: radial-gradient(circle, var(--text-dark) 1px, transparent 1px);
+    background-size: 4px 1px;
     transform: scaleX(0);
     transition: transform 0.3s ease;
 }
 
 .blog-link:hover {
-    color: var(--accent-color);
+    color: var(--text-dark);
+}
+
+.blog-link:hover::before {
+    width: 60px;
 }
 
 .blog-link:hover::after {
@@ -2100,6 +2130,7 @@ body {
 /* Hero Slider Styles for ftco-section */
 .carousel-intro-content {
     padding-right: 2rem;
+    
 }
 
 .carousel-location {
@@ -2367,11 +2398,17 @@ body {
         right: 15px;
     }
     
-               .hero-nav-btn {
-               width: 45px;
-               height: 45px;
-               font-size: 16px;
-           }
+    .hero-nav-btn {
+        width: 45px;
+        height: 45px;
+        font-size: 16px;
+    }
+    
+    /* Hide hero descriptions on mobile */
+    .hero-description,
+    .hero-description-2 {
+        display: none;
+    }
 }
 
 @media (max-width: 576px) {
@@ -2437,155 +2474,315 @@ body {
     transform: scale(1.1);
 } 
 
-/* Instagram Masonry Grid Layout */
-.instagram-masonry-grid {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 20px;
-    margin-top: 2rem;
-    max-width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.instagram-column {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    min-width: 0;
-}
-
-.instagram-photo {
-    position: relative;
-    border-radius: 12px;
-    overflow: hidden;
-    transition: all 0.3s ease;
-}
-
-.instagram-photo.tall {
-    height: 450px;
-    min-width: 200px;
-}
-
-.instagram-photo.medium {
-    height: 320px;
-    min-width: 200px;
-}
-
-.instagram-photo.short {
-    height: 240px;
-    min-width: 200px;
-}
-
-.instagram-photo.extra-tall {
-    height: 520px;
-    min-width: 200px;
-}
-
-.instagram-photo:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-}
-
-.instagram-img {
+/* Instagram Image Grid */
+.insta-grid img {
+    height: 300px;
     width: 100%;
-    height: 100%;
+    border-radius: 5px;
     object-fit: cover;
-    object-position: center;
     transition: all 0.3s ease;
 }
 
-.instagram-photo:hover .instagram-img {
+.insta-grid img:hover {
     transform: scale(1.05);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
 }
 
-.instagram-overlay {
-    position: absolute;
+/* Vertical offsets for stagger effect */
+.insta-grid .col:nth-child(1) { margin-top: 160px; }
+.insta-grid .col:nth-child(2) { margin-top: 120px; }
+.insta-grid .col:nth-child(3) { margin-top: 80px; }
+.insta-grid .col:nth-child(4) { margin-top: 40px; }
+.insta-grid .col:nth-child(5) { margin-top: 0px; }
+
+/* Responsive Design for Instagram Grid */
+@media (max-width: 768px) {
+    .insta-grid img {
+        height: 250px;
+    }
+    
+    .insta-grid .col:nth-child(1) { margin-top: 120px; }
+    .insta-grid .col:nth-child(2) { margin-top: 90px; }
+    .insta-grid .col:nth-child(3) { margin-top: 60px; }
+    .insta-grid .col:nth-child(4) { margin-top: 30px; }
+    .insta-grid .col:nth-child(5) { margin-top: 0px; }
+}
+
+@media (max-width: 576px) {
+    .insta-grid img {
+        height: 200px;
+    }
+    
+    .insta-grid .col:nth-child(1) { margin-top: 80px; }
+    .insta-grid .col:nth-child(2) { margin-top: 60px; }
+    .insta-grid .col:nth-child(3) { margin-top: 40px; }
+    .insta-grid .col:nth-child(4) { margin-top: 20px; }
+    .insta-grid .col:nth-child(5) { margin-top: 0px; }
+} 
+
+/* Right Side Menu Styles */
+.btn-menu {
+    background: transparent;
+    border: none;
+    color: white;
+    padding: 8px 16px;
+    font-size: 16px;
+    font-weight: 400;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.btn-menu:hover {
+    color: #f0f0f0;
+    transform: translateY(-1px);
+}
+
+/* Ensure menu button has dark color in sticky navbar */
+.navbar.scrolled .btn-menu {
+    color: var(--text-dark);
+}
+
+.navbar.scrolled .btn-menu:hover {
+    color: var(--primary-color);
+}
+
+.btn-menu i {
+    font-size: 16px;
+}
+
+/* Right Menu Overlay */
+.right-menu-overlay {
+    position: fixed;
     top: 0;
     left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.right-menu-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Right Menu */
+.right-menu {
+    position: fixed;
+    top: 0;
+    right: -400px;
+    width: 400px;
+    height: 100%;
+    background: white;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.right-menu-overlay.active .right-menu {
     right: 0;
-    bottom: 0;
-    background: linear-gradient(135deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.1) 100%);
+}
+
+/* Right Menu Header */
+.right-menu-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px;
+    border-bottom: 1px solid #eee;
+    background: var(--primary-color);
+    color: white;
+}
+
+.right-menu-title {
+    font-size: 24px;
+    font-weight: 600;
+    margin: 0;
+    font-family: 'Playfair Display', serif;
+}
+
+.right-menu-close {
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 0;
+    width: 40px;
+    height: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
-    opacity: 0;
+    border-radius: 50%;
     transition: all 0.3s ease;
 }
 
-.instagram-photo:hover .instagram-overlay {
-    opacity: 1;
+.right-menu-close:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: rotate(90deg);
 }
 
-.instagram-overlay i {
+/* Right Menu Content */
+.right-menu-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+}
+
+.right-menu-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 30px 0;
+}
+
+.right-menu-list li {
+    margin-bottom: 15px;
+}
+
+.right-menu-link {
+    display: block;
+    padding: 15px 20px;
+    color: #333;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.right-menu-link::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0;
+    height: 100%;
+    background: var(--primary-color);
+    transition: width 0.3s ease;
+    z-index: -1;
+}
+
+.right-menu-link:hover {
     color: white;
-    font-size: 2rem;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    transform: translateX(10px);
 }
 
-/* Responsive Design for Instagram Masonry */
+.right-menu-link:hover::before {
+    width: 100%;
+}
+
+/* Right Menu Footer */
+.right-menu-footer {
+    margin-top: auto;
+    padding-top: 5px;
+    border-top: 1px solid #eee;
+}
+
+
+
+.right-menu-social {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    background: var(--primary-color);
+    color: white;
+    border-radius: 50%;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.social-link:hover {
+    background: #333;
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.social-link i {
+    font-size: 18px;
+}
+
+/* Responsive Design for Right Menu */
 @media (max-width: 768px) {
-    .instagram-masonry-grid {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 15px;
-        max-width: 100%;
-        padding: 0 15px;
+    .right-menu {
+        width: 100%;
+        right: -100%;
     }
     
-    .instagram-column {
-        gap: 15px;
+    .right-menu-header {
+        padding: 20px;
     }
     
-    .instagram-photo.extra-tall {
-        height: 400px;
-        min-width: 150px;
+    .right-menu-title {
+        font-size: 20px;
     }
     
-    .instagram-photo.tall {
-        height: 350px;
-        min-width: 150px;
+    .right-menu-content {
+        padding: 20px;
     }
     
-    .instagram-photo.medium {
-        height: 250px;
-        min-width: 150px;
+    .right-menu-link {
+        padding: 12px 15px;
+        font-size: 15px;
     }
     
-    .instagram-photo.short {
-        height: 180px;
-        min-width: 150px;
+    .social-link {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .social-link i {
+        font-size: 16px;
     }
 }
 
 @media (max-width: 576px) {
-    .instagram-masonry-grid {
-        grid-template-columns: 1fr;
-        gap: 15px;
-        max-width: 100%;
-        padding: 0 15px;
+    .right-menu-header {
+        padding: 15px;
     }
     
-    .instagram-column {
-        gap: 15px;
+    .right-menu-title {
+        font-size: 18px;
     }
     
-    .instagram-photo.extra-tall {
-        height: 400px;
-        min-width: 100%;
+    .right-menu-content {
+        padding: 15px;
     }
     
-    .instagram-photo.tall {
-        height: 350px;
-        min-width: 100%;
+    .right-menu-link {
+        padding: 10px 12px;
+        font-size: 14px;
     }
     
-    .instagram-photo.medium {
-        height: 280px;
-        min-width: 100%;
+    .right-menu-social {
+        gap: 10px;
     }
     
-    .instagram-photo.short {
-        height: 220px;
-        min-width: 100%;
+    .social-link {
+        width: 35px;
+        height: 35px;
+    }
+    
+    .social-link i {
+        font-size: 14px;
     }
 } 
