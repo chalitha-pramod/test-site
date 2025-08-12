@@ -66,35 +66,52 @@ function changeHeroSlide(direction) {
 
        function updateHeroSlide() {
            const slide = heroSlides[currentSlideIndex];
+           const nextSlide = heroSlides[(currentSlideIndex + 1) % heroSlides.length];
            
            console.log('Updating slide to index:', currentSlideIndex, 'with data:', slide);
            
+           // Update desktop view (2 images)
+           const leftSlide = document.getElementById('heroSlideLeft');
+           const rightSlide = document.getElementById('heroSlideRight');
+           
+           if (leftSlide && rightSlide) {
+               // Update left slide
+               leftSlide.style.backgroundImage = `url('${slide.image}')`;
+               leftSlide.querySelector('.hero-slide-description').textContent = slide.description;
+               leftSlide.querySelector('.hero-slide-btn').textContent = slide.button;
+               leftSlide.querySelector('.hero-slide-title h2').textContent = slide.title;
+               leftSlide.querySelector('.hero-slide-title p').textContent = slide.subtitle;
+               
+               // Update right slide
+               rightSlide.style.backgroundImage = `url('${nextSlide.image}')`;
+               rightSlide.querySelector('.hero-slide-description').textContent = nextSlide.description;
+               rightSlide.querySelector('.hero-slide-btn').textContent = nextSlide.button;
+               rightSlide.querySelector('.hero-slide-title h2').textContent = nextSlide.title;
+               rightSlide.querySelector('.hero-slide-title p').textContent = nextSlide.subtitle;
+           }
+           
+           // Update mobile view (1 image)
            const mainSlide = document.getElementById('heroMainSlide');
            const overlay = document.getElementById('heroMainOverlay');
            
-           if (!mainSlide || !overlay) {
-               console.error('Required elements not found!');
-               return;
-           }
-           
-           // Update main slide
-           mainSlide.style.backgroundImage = `url('${slide.image}')`;
-           
-           // Update main slide content
-           overlay.innerHTML = `
-               <div class="hero-slide-bottom">
+           if (mainSlide && overlay) {
+               // Update main slide
+               mainSlide.style.backgroundImage = `url('${slide.image}')`;
+               
+               // Update main slide content
+               overlay.innerHTML = `
                    <div class="hero-slide-content">
                        <p class="hero-slide-description">
                            ${slide.description}
                        </p>
-                       <a href="#" class="btn btn-explore-wild">${slide.button}</a>
+                       <button class="hero-slide-btn">${slide.button}</button>
                    </div>
                    <div class="hero-slide-title">
                        <h2>${slide.title}</h2>
                        <p>${slide.subtitle}</p>
                    </div>
-               </div>
-           `;
+               `;
+           }
        }
 
 function startAutoSlide() {
@@ -129,6 +146,22 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
+    // Add click functionality to desktop slides
+    const leftSlide = document.getElementById('heroSlideLeft');
+    const rightSlide = document.getElementById('heroSlideRight');
+    
+    if (leftSlide) {
+        leftSlide.addEventListener('click', function() {
+            changeHeroSlide(-1);
+        });
+    }
+    
+    if (rightSlide) {
+        rightSlide.addEventListener('click', function() {
+            changeHeroSlide(1);
+        });
+    }
+    
     console.log('Hero slider initialized successfully');
 });
 
@@ -148,6 +181,15 @@ if (typeof jQuery !== 'undefined') {
             const direction = jQuery(this).hasClass('hero-nav-prev') ? -1 : 1;
             console.log('jQuery button clicked, direction:', direction);
             changeHeroSlide(direction);
+        });
+        
+        // Add jQuery click functionality to desktop slides
+        jQuery('#heroSlideLeft').on('click', function() {
+            changeHeroSlide(-1);
+        });
+        
+        jQuery('#heroSlideRight').on('click', function() {
+            changeHeroSlide(1);
         });
         
         console.log('jQuery hero slider initialized successfully');

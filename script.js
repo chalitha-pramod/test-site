@@ -99,54 +99,40 @@ function updateSlideLayout() {
 }
 
 function changeSlide(direction) {
-    const indicators = document.querySelectorAll('.indicator');
-    
-    // Remove active class from current indicator
-    indicators[currentSlide - 1].classList.remove('active');
-    
-    // Calculate new slide index
     currentSlide += direction;
     
-    // Handle wrap-around
     if (currentSlide > totalSlides) {
         currentSlide = 1;
     } else if (currentSlide < 1) {
         currentSlide = totalSlides;
     }
     
-    // Add active class to new indicator
-    indicators[currentSlide - 1].classList.add('active');
-    
-    // Update slide layout
     updateSlideLayout();
+    updateSlideIndicators();
     
-    // Reset auto-play timer
-    resetAutoPlay();
+    // Restart auto-play
+    if (autoPlayInterval) {
+        clearInterval(autoPlayInterval);
+        startAutoPlay();
+    }
 }
 
 function goToSlide(slideNumber) {
-    const indicators = document.querySelectorAll('.indicator');
-    
-    // Remove active class from current indicator
-    indicators[currentSlide - 1].classList.remove('active');
-    
-    // Set new slide
     currentSlide = slideNumber;
-    
-    // Add active class to new indicator
-    indicators[currentSlide - 1].classList.add('active');
-    
-    // Update slide layout
     updateSlideLayout();
+    updateSlideIndicators();
     
-    // Reset auto-play timer
-    resetAutoPlay();
+    // Restart auto-play
+    if (autoPlayInterval) {
+        clearInterval(autoPlayInterval);
+        startAutoPlay();
+    }
 }
 
 function updateSlideIndicators() {
-    const indicators = document.querySelectorAll('.indicator');
+    const indicators = document.querySelectorAll('.slide-indicator');
     indicators.forEach((indicator, index) => {
-        if (index === currentSlide - 1) {
+        if (index + 1 === currentSlide) {
             indicator.classList.add('active');
         } else {
             indicator.classList.remove('active');
@@ -157,83 +143,43 @@ function updateSlideIndicators() {
 function startAutoPlay() {
     autoPlayInterval = setInterval(() => {
         changeSlide(1);
-    }, 5000); // Change slide every 5 seconds
+    }, 5000);
 }
 
-function resetAutoPlay() {
-    clearInterval(autoPlayInterval);
-    startAutoPlay();
-}
-
-// Pause auto-play when hovering over carousel
-document.addEventListener('DOMContentLoaded', function() {
-    const carouselSection = document.querySelector('.carousel-section');
-    if (carouselSection) {
-        carouselSection.addEventListener('mouseenter', function() {
-            clearInterval(autoPlayInterval);
-        });
-        
-        carouselSection.addEventListener('mouseleave', function() {
-            startAutoPlay();
-        });
-    }
-});
-
-// Touch/swipe support for mobile
-let touchStartX = 0;
-let touchEndX = 0;
-
-document.addEventListener('DOMContentLoaded', function() {
-    const carouselSection = document.querySelector('.carousel-section');
-    if (carouselSection) {
-        carouselSection.addEventListener('touchstart', function(e) {
-            touchStartX = e.changedTouches[0].screenX;
-        });
-        
-        carouselSection.addEventListener('touchend', function(e) {
-            touchEndX = e.changedTouches[0].screenX;
-            handleSwipe();
-        });
-    }
-});
-
-function handleSwipe() {
-    const swipeThreshold = 50;
-    const diff = touchStartX - touchEndX;
-    
-    if (Math.abs(diff) > swipeThreshold) {
-        if (diff > 0) {
-            // Swipe left - next slide
-            changeSlide(1);
-        } else {
-            // Swipe right - previous slide
-            changeSlide(-1);
-        }
-    }
-}
-
-// Excursions Carousel functionality
+// Excursion carousel functionality
 let currentExcursionSlide = 1;
 const totalExcursionSlides = 3;
-let excursionAutoPlayInterval;
 
-// Initialize excursions carousel
-document.addEventListener('DOMContentLoaded', function() {
-    initializeExcursionCarousel();
-    startExcursionAutoPlay();
-});
-
-function initializeExcursionCarousel() {
-    // Initial setup
-}
+// Excursion slides data
+const excursionSlides = [
+    {
+        mainImage: 'https://images.unsplash.com/photo-1549366021-9f761d450615?w=1200&h=800&fit=crop',
+        mainTitle: 'RAFTING',
+        mainSubtitle: 'Kithulgala, Sri Lanka',
+        mainDescription: 'Ride the rapids of adventure in Kithulgala, Sri Lanka. Experience adrenaline-pumping white water rafting like never before.',
+        nextTitle: 'WATERFALL',
+        nextSubtitle: 'Ella, Hill Country'
+    },
+    {
+        mainImage: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=1200&h=800&fit=crop',
+        mainTitle: 'WATERFALL',
+        nextSubtitle: 'Ella, Hill Country',
+        mainDescription: 'Discover hidden waterfalls and natural wonders. Trek through pristine landscapes and experience the raw beauty of Sri Lanka\'s wilderness.',
+        nextTitle: 'SAFARI',
+        nextSubtitle: 'Yala National Park'
+    },
+    {
+        mainImage: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&h=800&fit=crop',
+        mainTitle: 'SAFARI',
+        nextSubtitle: 'Yala National Park',
+        mainDescription: 'Embark on an exciting wildlife safari through national parks. Spot elephants, leopards, and exotic birds in their natural habitat.',
+        nextTitle: 'RAFTING',
+        nextSubtitle: 'Kithulgala, Sri Lanka'
+    }
+];
 
 function changeExcursionSlide(direction) {
-    const slides = document.querySelectorAll('.excursions-slide');
-    
-    // Remove active class from current slide
-    slides[currentExcursionSlide - 1].classList.remove('active');
-    
-    // Calculate new slide index
+    // Calculate new slide number
     currentExcursionSlide += direction;
     
     // Handle wrap-around
@@ -243,74 +189,36 @@ function changeExcursionSlide(direction) {
         currentExcursionSlide = totalExcursionSlides;
     }
     
-    // Add active class to new slide
-    slides[currentExcursionSlide - 1].classList.add('active');
+    // Get current slide data
+    const currentSlide = excursionSlides[currentExcursionSlide - 1];
+    const nextSlide = excursionSlides[currentExcursionSlide % totalExcursionSlides];
     
-    // Reset auto-play timer
-    resetExcursionAutoPlay();
-}
-
-function startExcursionAutoPlay() {
-    excursionAutoPlayInterval = setInterval(() => {
-        changeExcursionSlide(1);
-    }, 6000); // Change slide every 6 seconds
-}
-
-function resetExcursionAutoPlay() {
-    clearInterval(excursionAutoPlayInterval);
-    startExcursionAutoPlay();
-}
-
-// Pause excursions auto-play when hovering
-document.addEventListener('DOMContentLoaded', function() {
-    const excursionsCarousel = document.querySelector('.excursions-carousel');
-    if (excursionsCarousel) {
-        excursionsCarousel.addEventListener('mouseenter', function() {
-            clearInterval(excursionAutoPlayInterval);
-        });
-        
-        excursionsCarousel.addEventListener('mouseleave', function() {
-            startExcursionAutoPlay();
-        });
-    }
-});
-
-// Touch/swipe support for excursions carousel
-let excursionTouchStartX = 0;
-let excursionTouchEndX = 0;
-
-document.addEventListener('DOMContentLoaded', function() {
-    const excursionsCarousel = document.querySelector('.excursions-carousel');
-    if (excursionsCarousel) {
-        excursionsCarousel.addEventListener('touchstart', function(e) {
-            excursionTouchStartX = e.changedTouches[0].screenX;
-        });
-        
-        excursionsCarousel.addEventListener('touchend', function(e) {
-            excursionTouchEndX = e.changedTouches[0].screenX;
-            handleExcursionSwipe();
-        });
-    }
-});
-
-function handleExcursionSwipe() {
-    const swipeThreshold = 50;
-    const diff = excursionTouchStartX - excursionTouchEndX;
+    // Update main slide
+    const mainSlide = document.getElementById('excursionMainSlide');
+    const mainOverlay = document.getElementById('excursionMainOverlay');
     
-    if (Math.abs(diff) > swipeThreshold) {
-        if (diff > 0) {
-            // Swipe left - next slide
-            changeExcursionSlide(1);
-        } else {
-            // Swipe right - previous slide
-            changeExcursionSlide(-1);
-        }
+    if (mainSlide && mainOverlay) {
+        mainSlide.style.backgroundImage = `url('${currentSlide.mainImage}')`;
+        mainOverlay.querySelector('.excursion-slide-description').textContent = currentSlide.mainDescription;
+        mainOverlay.querySelector('.excursion-slide-title h2').textContent = currentSlide.mainTitle;
+        mainOverlay.querySelector('.excursion-slide-title p').textContent = currentSlide.mainSubtitle;
+    }
+    
+    // Update next slide preview
+    const nextSlideElement = document.getElementById('excursionNextSlide');
+    const nextOverlay = document.getElementById('excursionNextOverlay');
+    
+    if (nextSlideElement && nextOverlay) {
+        nextSlideElement.style.backgroundImage = `url('${nextSlide.mainImage}')`;
+        nextOverlay.querySelector('#excursionNextTitle').textContent = nextSlide.nextTitle;
+        nextOverlay.querySelector('#excursionNextSubtitle').textContent = nextSlide.nextSubtitle;
     }
 }
 
-// Newsletter form functionality
+// Newsletter functionality
 document.addEventListener('DOMContentLoaded', function() {
     const newsletterForm = document.querySelector('.newsletter-form');
+    
     if (newsletterForm) {
         newsletterForm.addEventListener('submit', function(e) {
             e.preventDefault();
@@ -411,4 +319,430 @@ style.textContent = `
         }
     }
 `;
-document.head.appendChild(style); 
+document.head.appendChild(style);
+
+// Services Slider Functionality
+let currentServicesSlide = 0;
+const totalServicesSlides = 6;
+let servicesAutoPlayInterval;
+
+// Initialize services slider
+document.addEventListener('DOMContentLoaded', function() {
+    initializeServicesSlider();
+    startServicesAutoPlay();
+    generateServicesDots();
+});
+
+function initializeServicesSlider() {
+    updateServicesSlide();
+}
+
+function servicesMoveSlide(direction) {
+    // Clear auto-play interval
+    if (servicesAutoPlayInterval) {
+        clearInterval(servicesAutoPlayInterval);
+    }
+    
+    currentServicesSlide += direction;
+    
+    // Loop through slides
+    if (currentServicesSlide >= totalServicesSlides) {
+        currentServicesSlide = 0;
+    } else if (currentServicesSlide < 0) {
+        currentServicesSlide = totalServicesSlides - 1;
+    }
+    
+    updateServicesSlide();
+    
+    // Restart auto-play
+    startServicesAutoPlay();
+}
+
+function updateServicesSlide() {
+    const slider = document.getElementById('servicesSlider');
+    if (slider) {
+        const slideWidth = 100 / 3; // Show 3 slides at once
+        const translateX = -(currentServicesSlide * slideWidth);
+        slider.style.transform = `translateX(${translateX}%)`;
+        
+        // Update dots
+        updateServicesDots();
+    }
+}
+
+function generateServicesDots() {
+    const dotsContainer = document.getElementById('servicesSliderDots');
+    if (dotsContainer) {
+        dotsContainer.innerHTML = '';
+        
+        for (let i = 0; i < totalServicesSlides; i++) {
+            const dot = document.createElement('div');
+            dot.className = `services-dot ${i === 0 ? 'active' : ''}`;
+            dot.addEventListener('click', () => {
+                currentServicesSlide = i;
+                updateServicesSlide();
+                
+                // Clear and restart auto-play
+                if (servicesAutoPlayInterval) {
+                    clearInterval(servicesAutoPlayInterval);
+                }
+                startServicesAutoPlay();
+            });
+            dotsContainer.appendChild(dot);
+        }
+    }
+}
+
+function updateServicesDots() {
+    const dots = document.querySelectorAll('.services-dot');
+    dots.forEach((dot, index) => {
+        if (index === currentServicesSlide) {
+            dot.classList.add('active');
+        } else {
+            dot.classList.remove('active');
+        }
+    });
+}
+
+function startServicesAutoPlay() {
+    servicesAutoPlayInterval = setInterval(function() {
+        servicesMoveSlide(1);
+    }, 4000);
+}
+
+// Pause auto-play on hover
+document.addEventListener('DOMContentLoaded', function() {
+    const servicesSlider = document.querySelector('.services-slider-container');
+    if (servicesSlider) {
+        servicesSlider.addEventListener('mouseenter', function() {
+            if (servicesAutoPlayInterval) {
+                clearInterval(servicesAutoPlayInterval);
+            }
+        });
+        
+        servicesSlider.addEventListener('mouseleave', function() {
+            startServicesAutoPlay();
+        });
+    }
+});
+
+// Adventure Activities Slider Functionality
+let currentAdventureSlide = 0;
+const totalAdventureSlides = 6;
+let adventureAutoPlayInterval;
+
+// Initialize adventure activities slider
+document.addEventListener('DOMContentLoaded', function() {
+    initializeAdventureSlider();
+    startAdventureAutoPlay();
+    generateAdventureDots();
+});
+
+function initializeAdventureSlider() {
+    updateAdventureSlide();
+}
+
+function adventureMoveSlide(direction) {
+    // Clear auto-play interval
+    if (adventureAutoPlayInterval) {
+        clearInterval(adventureAutoPlayInterval);
+    }
+    
+    currentAdventureSlide += direction;
+    
+    // Loop through slides
+    if (currentAdventureSlide >= totalAdventureSlides) {
+        currentAdventureSlide = 0;
+    } else if (currentAdventureSlide < 0) {
+        currentAdventureSlide = totalAdventureSlides - 1;
+    }
+    
+    updateAdventureSlide();
+    
+    // Restart auto-play
+    startAdventureAutoPlay();
+}
+
+function updateAdventureSlide() {
+    const slider = document.getElementById('adventureSlider');
+    if (slider) {
+        const slideWidth = 100 / 3; // Show 3 slides at once
+        const translateX = -(currentAdventureSlide * slideWidth);
+        slider.style.transform = `translateX(${translateX}%)`;
+        
+        // Update dots
+        updateAdventureDots();
+    }
+}
+
+function generateAdventureDots() {
+    const dotsContainer = document.getElementById('adventureSliderDots');
+    if (dotsContainer) {
+        dotsContainer.innerHTML = '';
+        
+        for (let i = 0; i < totalAdventureSlides; i++) {
+            const dot = document.createElement('div');
+            dot.className = `adventure-dot ${i === 0 ? 'active' : ''}`;
+            dot.addEventListener('click', () => {
+                currentAdventureSlide = i;
+                updateAdventureSlide();
+                
+                // Clear and restart auto-play
+                if (adventureAutoPlayInterval) {
+                    clearInterval(adventureAutoPlayInterval);
+                }
+                startAdventureAutoPlay();
+            });
+            dotsContainer.appendChild(dot);
+        }
+    }
+}
+
+function updateAdventureDots() {
+    const dots = document.querySelectorAll('.adventure-dot');
+    dots.forEach((dot, index) => {
+        if (index === currentAdventureSlide) {
+            dot.classList.add('active');
+        } else {
+            dot.classList.remove('active');
+        }
+    });
+}
+
+function startAdventureAutoPlay() {
+    adventureAutoPlayInterval = setInterval(function() {
+        adventureMoveSlide(1);
+    }, 4000);
+}
+
+// Pause auto-play on hover for adventure activities
+document.addEventListener('DOMContentLoaded', function() {
+    const adventureSlider = document.querySelector('.adventure-slider-container');
+    if (adventureSlider) {
+        adventureSlider.addEventListener('mouseenter', function() {
+            if (adventureAutoPlayInterval) {
+                clearInterval(adventureAutoPlayInterval);
+            }
+        });
+        
+        adventureSlider.addEventListener('mouseleave', function() {
+            startAdventureAutoPlay();
+        });
+    }
+});
+
+// More Like These Adventures Slider Functionality
+let currentMoreAdventuresSlide = 0;
+const totalMoreAdventuresSlides = 6;
+let moreAdventuresAutoPlayInterval;
+
+// Initialize more adventures slider
+document.addEventListener('DOMContentLoaded', function() {
+    initializeMoreAdventuresSlider();
+    startMoreAdventuresAutoPlay();
+});
+
+function initializeMoreAdventuresSlider() {
+    updateMoreAdventuresSlide();
+}
+
+function moreAdventuresMoveSlide(direction) {
+    // Clear auto-play interval
+    if (moreAdventuresAutoPlayInterval) {
+        clearInterval(moreAdventuresAutoPlayInterval);
+    }
+    
+    currentMoreAdventuresSlide += direction;
+    
+    // Loop through slides
+    if (currentMoreAdventuresSlide >= totalMoreAdventuresSlides) {
+        currentMoreAdventuresSlide = 0;
+    } else if (currentMoreAdventuresSlide < 0) {
+        currentMoreAdventuresSlide = totalMoreAdventuresSlides - 1;
+    }
+    
+    updateMoreAdventuresSlide();
+    
+    // Restart auto-play
+    startMoreAdventuresAutoPlay();
+}
+
+function updateMoreAdventuresSlide() {
+    const slider = document.querySelector('.more-adventures-slider');
+    if (slider) {
+        const slideWidth = 100 / 3; // Show 3 slides at once
+        const translateX = -(currentMoreAdventuresSlide * slideWidth);
+        slider.style.transform = `translateX(${translateX}%)`;
+    }
+}
+
+function startMoreAdventuresAutoPlay() {
+    moreAdventuresAutoPlayInterval = setInterval(function() {
+        moreAdventuresMoveSlide(1);
+    }, 4000);
+}
+
+// Pause auto-play on hover for more adventures
+document.addEventListener('DOMContentLoaded', function() {
+    const moreAdventuresSlider = document.querySelector('.more-adventures-slider-container');
+    if (moreAdventuresSlider) {
+        moreAdventuresSlider.addEventListener('mouseenter', function() {
+            if (moreAdventuresAutoPlayInterval) {
+                clearInterval(moreAdventuresAutoPlayInterval);
+            }
+        });
+        
+        moreAdventuresSlider.addEventListener('mouseleave', function() {
+            startMoreAdventuresAutoPlay();
+        });
+    }
+});
+
+// More Packages Slider Functionality
+let currentMorePackagesSlide = 0;
+const totalMorePackagesSlides = 6;
+let morePackagesAutoPlayInterval;
+
+// Initialize more packages slider
+document.addEventListener('DOMContentLoaded', function() {
+    initializeMorePackagesSlider();
+    startMorePackagesAutoPlay();
+});
+
+function initializeMorePackagesSlider() {
+    updateMorePackagesSlide();
+}
+
+function morePackagesMoveSlide(direction) {
+    // Clear auto-play interval
+    if (morePackagesAutoPlayInterval) {
+        clearInterval(morePackagesAutoPlayInterval);
+    }
+    
+    // Move one slide at a time
+    currentMorePackagesSlide += direction;
+    
+    // Loop through slides
+    if (currentMorePackagesSlide >= totalMorePackagesSlides) {
+        currentMorePackagesSlide = 0;
+    } else if (currentMorePackagesSlide < 0) {
+        currentMorePackagesSlide = totalMorePackagesSlides - 1;
+    }
+    
+    updateMorePackagesSlide();
+    
+    // Restart auto-play
+    startMorePackagesAutoPlay();
+}
+
+function updateMorePackagesSlide() {
+    const slider = document.querySelector('.more-packages-slider');
+    if (slider) {
+        // Move one slide at a time instead of 3
+        const slideWidth = 100 / 3; // Each slide takes 1/3 of the container
+        const translateX = -(currentMorePackagesSlide * slideWidth);
+        slider.style.transform = `translateX(${translateX}%)`;
+    }
+}
+
+function startMorePackagesAutoPlay() {
+    morePackagesAutoPlayInterval = setInterval(function() {
+        morePackagesMoveSlide(1); // Move one slide at a time
+    }, 4000);
+}
+
+// Pause auto-play on hover for more packages
+document.addEventListener('DOMContentLoaded', function() {
+    const morePackagesSlider = document.querySelector('.more-packages-slider-container');
+    if (morePackagesSlider) {
+        morePackagesSlider.addEventListener('mouseenter', function() {
+            if (morePackagesAutoPlayInterval) {
+                clearInterval(morePackagesAutoPlayInterval);
+            }
+        });
+        
+        morePackagesSlider.addEventListener('mouseleave', function() {
+            startMorePackagesAutoPlay();
+        });
+    }
+});
+
+// Hero Slider Functionality
+let currentHeroSlide = 0;
+const totalHeroSlides = 6;
+let heroAutoPlayInterval;
+
+// Initialize hero slider
+document.addEventListener('DOMContentLoaded', function() {
+    initializeHeroSlider();
+    startHeroAutoPlay();
+});
+
+function initializeHeroSlider() {
+    updateHeroSlide();
+}
+
+function changeHeroSlide(direction) {
+    // Clear auto-play interval
+    if (heroAutoPlayInterval) {
+        clearInterval(heroAutoPlayInterval);
+    }
+    
+    currentHeroSlide += direction;
+    
+    // Loop through slides
+    if (currentHeroSlide >= totalHeroSlides) {
+        currentHeroSlide = 0;
+    } else if (currentHeroSlide < 0) {
+        currentHeroSlide = totalHeroSlides - 1;
+    }
+    
+    updateHeroSlide();
+    
+    // Restart auto-play
+    startHeroAutoPlay();
+}
+
+function updateHeroSlide() {
+    // Update hero slide content here
+    // This function can be customized based on your hero slider structure
+}
+
+function startHeroAutoPlay() {
+    heroAutoPlayInterval = setInterval(function() {
+        changeHeroSlide(1);
+    }, 5000);
+}
+
+// Pause auto-play on hover for hero slider
+document.addEventListener('DOMContentLoaded', function() {
+    const heroSlider = document.querySelector('.hero-slider-wrapper');
+    if (heroSlider) {
+        heroSlider.addEventListener('mouseenter', function() {
+            if (heroAutoPlayInterval) {
+                clearInterval(heroAutoPlayInterval);
+            }
+        });
+        
+        heroSlider.addEventListener('mouseleave', function() {
+            startHeroAutoPlay();
+        });
+    }
+});
+
+// Global error handling for undefined functions
+window.addEventListener('error', function(e) {
+    if (e.message.includes('is not defined')) {
+        console.warn('Function not defined, this is normal during development:', e.message);
+    }
+});
+
+// Ensure all functions are available globally
+window.morePackagesMoveSlide = morePackagesMoveSlide;
+window.moreAdventuresMoveSlide = moreAdventuresMoveSlide;
+window.servicesMoveSlide = servicesMoveSlide;
+window.adventureMoveSlide = adventureMoveSlide;
+window.changeHeroSlide = changeHeroSlide;
+window.changeExcursionSlide = changeExcursionSlide;
+window.changeSlide = changeSlide;
+window.goToSlide = goToSlide;

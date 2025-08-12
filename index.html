@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="styles.css">
     <!-- Adventure Activities CSS -->
     <link rel="stylesheet" href="css/adventure-styles.css">
+
 </head>
 <body>
     <!-- Navigation -->
@@ -111,6 +112,12 @@
             </div>
         </div>
     </section>
+	<!-- Mobile Call Button -->
+    <div class="mobile-call-button d-lg-none">
+        <a href="tel:+1234567890" class="btn-call-full">
+            Call us
+        </a>
+    </div>
 
     <!-- Second Hero Section -->
     <section class="hero-section-2" id="about">
@@ -156,46 +163,114 @@
             </div>
         </div>
     </section>
-
-    <!-- Fourth Section - Carousel -->
-    <section class="ftco-section" style="background-color: #f8f9fa;">
+  <!-- Tenth Section - More Like This Packages -->
+    <section class="more-packages-section">
         <div class="container">
-            <!-- Top Section - Text Content -->
-           
             
-            <!-- Bottom Section - Main Image with Side Navigation -->
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="hero-slider-wrapper">
-                        <!-- Main Image (Left) -->
-                        <div class="hero-main-slide" id="heroMainSlide" style="background-image: url('https://images.unsplash.com/photo-1549366021-9f761d450615?w=1400&h=800&fit=crop');">
-                            <div class="hero-slide-overlay" id="heroMainOverlay">
-                                <div class="hero-slide-content">
-                                </div>
-                                <div class="hero-slide-title">
-                                    <h2>WILD LIFE</h2>
-                                    <p>Minneriya National Park, Dambulla</p>
-                                </div>
+            
+            <div class="more-packages-slider-container">
+                <div class="more-packages-slider">
+                    <div class="more-packages-slide">
+                        <div class="more-packages-card">
+                            <div class="more-packages-image">
+                                <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=400&fit=crop" alt="Mountain adventure package" class="more-packages-img">
+                            </div>
+                            <div class="more-packages-content">
+                                <h2 class="more-packages-location-heading">WILD LIFE</h2>
+                                <p class="more-packages-location-text">Minneriya National Park, Dambulla</p>
+                                <p class="more-packages-description">ADVENTURE PACKAGE</p>
+                                <a href="#package1" class="more-packages-link">VIEW PACKAGE</a>
                             </div>
                         </div>
-
-                        <!-- Second Image (Right) -->
-                       
-
-                        <!-- Side Navigation Arrows -->
-                        <div class="hero-nav-arrows">
-                            <button class="hero-nav-btn hero-nav-prev" onclick="changeHeroSlide(-1)">
-                                <i class="fas fa-chevron-left"></i>
-                            </button>
-                            <button class="hero-nav-btn hero-nav-next" onclick="changeHeroSlide(1)">
-                                <i class="fas fa-chevron-right"></i>
-                            </button>
+                    </div>
+                    
+                    <div class="more-packages-slide">
+                        <div class="more-packages-card">
+                            <div class="more-packages-image">
+                                <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=400&fit=crop" alt="Cultural heritage package" class="more-packages-img">
+                            </div>
+                            <div class="more-packages-content">
+                                <h2 class="more-packages-location-heading">CULTURAL</h2>
+                                <p class="more-packages-location-text">Ancient Temples, Kandy</p>
+                                <p class="more-packages-description">CULTURAL PACKAGE</p>
+                                <a href="#package2" class="more-packages-link">VIEW PACKAGE</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="more-packages-slide">
+                        <div class="more-packages-card">
+                            <div class="more-packages-image">
+                                <img src="https://images.unsplash.com/photo-1493558103817-58b2924bce98?w=600&h=400&fit=crop" alt="Luxury beach package" class="more-packages-img">
+                            </div>
+                            <div class="more-packages-content">
+                                <h2 class="more-packages-location-heading">LUXURY</h2>
+                                <p class="more-packages-location-text">Beach Resort, Galle</p>
+                                <p class="more-packages-description">LUXURY PACKAGE</p>
+                                <a href="#package3" class="more-packages-link">VIEW PACKAGE</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="more-packages-slide">
+                        <div class="more-packages-card">
+                            <div class="more-packages-image">
+                                <img src="https://images.unsplash.com/photo-1523413651479-597eb2da0ad6?w=600&h=400&fit=crop" alt="Wildlife safari package" class="more-packages-img">
+                            </div>
+                            <div class="more-packages-content">
+                                <h2 class="more-packages-location-heading">WILD LIFE</h2>
+                                <p class="more-packages-location-text">Yala National Park, Hambantota</p>
+                                <p class="more-packages-description">WILDLIFE PACKAGE</p>
+                                <a href="#package4" class="more-packages-link">VIEW PACKAGE</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="more-packages-slide">
+                        <div class="more-packages-card">
+                            <div class="more-packages-image">
+                                <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=600&h=400&fit=crop" alt="Tea plantation package" class="more-packages-img">
+                            </div>
+                            <div class="more-packages-content">
+                                <h2 class="more-packages-location-heading">EXPERIENCE</h2>
+                                <p class="more-packages-location-text">Tea Plantations, Nuwara Eliya</p>
+                                <p class="more-packages-description">EXPERIENCE PACKAGE</p>
+                                <a href="#package5" class="more-packages-link">VIEW PACKAGE</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="more-packages-slide">
+                        <div class="more-packages-card">
+                            <div class="more-packages-image">
+                                <img src="https://images.unsplash.com/photo-1549366021-9f761d450615?w=600&h=400&fit=crop" alt="City exploration package" class="more-packages-img">
+                            </div>
+                            <div class="more-packages-content">
+                                <h2 class="more-packages-location-heading">URBAN</h2>
+                                <p class="more-packages-location-text">City Streets, Colombo</p>
+                                <p class="more-packages-description">URBAN PACKAGE</p>
+                                <a href="#package6" class="more-packages-link">VIEW PACKAGE</a>
+                            </div>
                         </div>
                     </div>
                 </div>
+                
+                <!-- Slider Navigation -->
+                <div class="more-packages-slider-nav">
+                    <button class="more-packages-slider-btn prev-btn" onclick="morePackagesMoveSlide(-1)">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="more-packages-slider-btn next-btn" onclick="morePackagesMoveSlide(1)">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
             </div>
         </div>
-    </section>
+        </section>
+
+    
+
+    
 <!-- Fifth Section - Travel Packages -->
     <section class="packages-section" id="tours">
         <div class="container">
@@ -281,72 +356,132 @@
             </div>
         </div>
     </section>
-
-    
-
-    <!-- New Adventure Activities Section -->
-    <section class="adventure-activities-section" id="adventure-activities">
+<!-- Third Section - Introduction -->
+    <section class="intro-section">
         <div class="container">
-            <!-- Top Section - Text Content -->
-            <div class="row mb-5">
-                <div class="col-lg-6">
-                    <div class="adventure-intro-content">
-                        <p class="adventure-location-label">Adventure Activities</p>
-                        <h2 class="adventure-main-heading">Experience Thrilling Adventures Across Sri Lanka</h2>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="adventure-intro-description">
-                        <p class="adventure-intro-text">
-                            From <em>adrenaline-pumping water sports</em> to serene nature trails, discover the perfect blend of excitement and tranquility. Our curated adventure activities showcase the diverse landscapes and thrilling experiences that make Sri Lanka a premier adventure destination.
-                        </p>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Bottom Section - Main Image with Side Navigation -->
             <div class="row">
-                <div class="col-md-12">
-                    <div class="adventure-slider-wrapper">
-                        <!-- Main Image -->
-                        <div class="adventure-main-slide" id="adventureMainSlideElement" style="background-image: url('images/image.jpg');">
-                            <div class="adventure-slide-overlay" id="adventureMainOverlayElement">
-                                <div class="adventure-slide-content">
-                                    <p class="adventure-slide-description">
-                                        Navigate through challenging rapids and experience the thrill of white water rafting in the pristine waters of Kithulgala. Perfect for adventure enthusiasts seeking an unforgettable experience.
-                                    </p>
-                                    <a href="#rafting" class="btn-adventure-book">Book Now</a>
-                                </div>
-                                <div class="adventure-slide-title">
-                                    <h2>WHITE WATER RAFTING</h2>
-                                    <p>Kithulgala, Sri Lanka</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Next Slide Preview -->
-                        
-
-                        <!-- Side Navigation Arrows -->
-                        <div class="adventure-nav-arrows">
-                            <button class="adventure-nav-btn adventure-nav-prev" onclick="changeAdventureSlideDirection(-1)">
-                                <i class="fas fa-chevron-left"></i>
-                            </button>
-                            <button class="adventure-nav-btn adventure-nav-next" onclick="changeAdventureSlideDirection(1)">
-                                <i class="fas fa-chevron-right"></i>
-                            </button>
-                        </div>
+                <div class="col-lg-6">
+                    <div class="intro-content">
+                        <p class="location-text">Sri Lanka</p>
+                        <h2 class="intro-heading">Where Every Moment Becomes an Unforgettable Experience</h2>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="intro-description">
+                        <h3 class="intro-subtitle">Discover Sri Lanka's enchanting allure</h3>
+                        <p class="intro-text">
+                            golden beaches, lush jungles teeming with wildlife, vibrant culture, misty hill stations adorned with tea estates, and ancient Ayurvedic healing. Embark on an unforgettable journey, where every moment is filled with adventure, serenity, and cultural immersion.
+                        </p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+    <!-- More Like These Adventures Section -->
+    <section class="more-adventures-section">
+        <div class="container">
+            
+            
+            <div class="more-adventures-slider-container">
+                <div class="more-adventures-slider">
+                    <div class="more-adventures-slide">
+                        <div class="more-adventures-card">
+                            <div class="more-adventures-image">
+                                <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=600&h=400&fit=crop" alt="Rock climbing adventure" class="more-adventures-img">
+                            </div>
+                            <div class="more-adventures-content">
+                                <h2 class="more-adventures-location-heading">ROCK CLIMBING</h2>
+                                <p class="more-adventures-location-text">Various Locations, Sri Lanka</p>
+                                <p class="more-adventures-description">ADVENTURE PACKAGE</p>
+                                <a href="#rock-climbing" class="more-adventures-link">VIEW PACKAGE</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="more-adventures-slide">
+                        <div class="more-adventures-card">
+                            <div class="more-adventures-image">
+                                <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=400&fit=crop" alt="Mountain biking adventure" class="more-adventures-img">
+                            </div>
+                            <div class="more-adventures-content">
+                                <h2 class="more-adventures-location-heading">MOUNTAIN BIKING</h2>
+                                <p class="more-adventures-location-text">Central Highlands, Nuwara Eliya</p>
+                                <p class="more-adventures-description">ADVENTURE PACKAGE</p>
+                                <a href="#mountain-biking" class="more-adventures-link">VIEW PACKAGE</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="more-adventures-slide">
+                        <div class="more-adventures-card">
+                            <div class="more-adventures-image">
+                                <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=400&fit=crop" alt="Cave exploration adventure" class="more-adventures-img">
+                            </div>
+                            <div class="more-adventures-content">
+                                <h2 class="more-adventures-location-heading">CAVE EXPLORATION</h2>
+                                <p class="more-adventures-location-text">Batatotalena Caves, Ratnapura</p>
+                                <p class="more-adventures-description">ADVENTURE PACKAGE</p>
+                                <a href="#cave-exploration" class="more-adventures-link">VIEW PACKAGE</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="more-adventures-slide">
+                        <div class="more-adventures-card">
+                            <div class="more-adventures-image">
+                                <img src="https://images.unsplash.com/photo-1523413651479-597eb2da0ad6?w=600&h=400&fit=crop" alt="Paragliding adventure" class="more-adventures-img">
+                            </div>
+                            <div class="more-adventures-content">
+                                <h2 class="more-adventures-location-heading">PARAGLIDING</h2>
+                                <p class="more-adventures-location-text">Ella Mountains, Central Highlands</p>
+                                <p class="more-adventures-description">ADVENTURE PACKAGE</p>
+                                <a href="#paragliding" class="more-adventures-link">VIEW PACKAGE</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="more-adventures-slide">
+                        <div class="more-adventures-card">
+                            <div class="more-adventures-image">
+                                <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=600&h=400&fit=crop" alt="Surfing adventure" class="more-adventures-img">
+                            </div>
+                            <div class="more-adventures-content">
+                                <h2 class="more-adventures-location-heading">SURFING</h2>
+                                <p class="more-adventures-location-text">Arugam Bay, Eastern Coast</p>
+                                <p class="more-adventures-description">ADVENTURE PACKAGE</p>
+                                <a href="#surfing" class="more-adventures-link">VIEW PACKAGE</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="more-adventures-slide">
+                        <div class="more-adventures-card">
+                            <div class="more-adventures-image">
+                                <img src="https://images.unsplash.com/photo-1493558103817-58b2924bce98?w=600&h=400&fit=crop" alt="Kayaking adventure" class="more-adventures-img">
+                            </div>
+                            <div class="more-adventures-content">
+                                <h2 class="more-adventures-location-heading">KAYAKING</h2>
+                                <p class="more-adventures-location-text">Madu Ganga, Southern Province</p>
+                                <p class="more-adventures-description">ADVENTURE PACKAGE</p>
+                                <a href="#kayaking" class="more-adventures-link">VIEW PACKAGE</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Slider Navigation -->
+                <div class="more-adventures-slider-nav">
+                    <button class="more-adventures-slider-btn prev-btn" onclick="moreAdventuresMoveSlide(-1)">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="more-adventures-slider-btn next-btn" onclick="moreAdventuresMoveSlide(1)">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <!-- Third Section - Introduction -->
-   
-
-    <!-- Fourth Section - Carousel -->
-    
     <!-- Seventh Section - Testimonials -->
     <section class="testimonials-section">
         <div class="container">
@@ -453,48 +588,103 @@
                 <h2 class="blog-heading">Unveiling Travel Tales to Igniting Your Wanderlust</h2>
             </div>
             
-            <div class="row">
-                <div class="col-lg-4 mb-4">
-                    <div class="blog-card">
-                        <div class="blog-image">
-                            <img src="https://images.unsplash.com/photo-1549366021-9f761d450615?w=600&h=400&fit=crop" alt="Tuk-tuk with tourists in Sri Lanka" class="blog-img">
+            <div class="blog-slider-container">
+                <div class="blog-slider">
+                    <div class="blog-slide">
+                        <div class="blog-card">
+                            <div class="blog-image">
+                                <img src="https://images.unsplash.com/photo-1549366021-9f761d450615?w=600&h=400&fit=crop" alt="Tuk-tuk with tourists in Sri Lanka" class="blog-img">
+                            </div>
+                            <div class="blog-content">
+                                <p class="blog-category">TRAVEL INSIGHTS</p>
+                                <h3 class="blog-title">How to <strong>choose</strong> a <strong>responsible</strong> tour operator</h3>
+                                <a href="#blog1" class="blog-link">READ STORY</a>
+                            </div>
                         </div>
-                        <div class="blog-content">
-                            <p class="blog-category">TRAVEL INSIGHTS</p>
-                            <h3 class="blog-title">How to <strong>choose</strong> a <strong>responsible</strong> tour operator</h3>
-                            <a href="#blog1" class="blog-link">READ STORY</a>
+                    </div>
+                    
+                    <div class="blog-slide">
+                        <div class="blog-card">
+                            <div class="blog-image">
+                                <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=400&fit=crop" alt="Blue train on stone arch bridge" class="blog-img">
+                            </div>
+                            <div class="blog-content">
+                                <p class="blog-category">TRAVEL INSIGHTS</p>
+                                <h3 class="blog-title">Top 10 <strong>adventure</strong> activities in <strong>Sri Lanka</strong></h3>
+                                <a href="#blog2" class="blog-link">READ STORY</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="blog-slide">
+                        <div class="blog-card">
+                            <div class="blog-image">
+                                <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=400&fit=crop" alt="Person on mountain peak with panoramic view" class="blog-img">
+                            </div>
+                            <div class="blog-content">
+                                <p class="blog-category">TRAVEL INSIGHTS</p>
+                                <h3 class="blog-title">Best <strong>beach</strong> destinations for <strong>2024</strong></h3>
+                                <a href="#blog3" class="blog-link">READ STORY</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="blog-slide">
+                        <div class="blog-card">
+                            <div class="blog-image">
+                                <img src="https://images.unsplash.com/photo-1523413651479-597eb2da0ad6?w=600&h=400&fit=crop" alt="Canoe ride in tropical waters" class="blog-img">
+                            </div>
+                            <div class="blog-content">
+                                <p class="blog-category">CULTURE & HERITAGE</p>
+                                <h3 class="blog-title">Exploring <strong>ancient</strong> temples and <strong>cultural</strong> sites</h3>
+                                <a href="#blog4" class="blog-link">READ STORY</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="blog-slide">
+                        <div class="blog-card">
+                            <div class="blog-image">
+                                <img src="https://images.unsplash.com/photo-1493558103817-58b2924bce98?w=600&h=400&fit=crop" alt="Luxury beach resort" class="blog-img">
+                            </div>
+                            <div class="blog-content">
+                                <p class="blog-category">LUXURY TRAVEL</p>
+                                <h3 class="blog-title">Ultimate <strong>luxury</strong> travel guide for <strong>Maldives</strong></h3>
+                                <a href="#blog5" class="blog-link">READ STORY</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="blog-slide">
+                        <div class="blog-card">
+                            <div class="blog-image">
+                                <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=600&h=400&fit=crop" alt="Mountain landscape with lake" class="blog-img">
+                            </div>
+                            <div class="blog-content">
+                                <p class="blog-category">NATURE & WILDLIFE</p>
+                                <h3 class="blog-title">Wildlife <strong>safari</strong> adventures in <strong>national parks</strong></h3>
+                                <a href="#blog6" class="blog-link">READ STORY</a>
+                            </div>
                         </div>
                     </div>
                 </div>
                 
-                <div class="col-lg-4 mb-4">
-                    <div class="blog-card">
-                        <div class="blog-image">
-                            <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=400&fit=crop" alt="Blue train on stone arch bridge" class="blog-img">
-                        </div>
-                        <div class="blog-content">
-                            <p class="blog-category">TRAVEL INSIGHTS</p>
-                            <h3 class="blog-title">How to <strong>choose</strong> a <strong>responsible</strong> tour operator</h3>
-                            <a href="#blog2" class="blog-link">READ STORY</a>
-                        </div>
-                    </div>
+                <!-- Slider Navigation -->
+                <div class="slider-nav">
+                    <button class="slider-btn prev-btn" onclick="blogMoveSlide(-1)">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="slider-btn next-btn" onclick="blogMoveSlide(1)">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
                 </div>
                 
-                <div class="col-lg-4 mb-4">
-                    <div class="blog-card">
-                        <div class="blog-image">
-                            <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=400&fit=crop" alt="Person on mountain peak with panoramic view" class="blog-img">
-                        </div>
-                        <div class="blog-content">
-                            <p class="blog-category">TRAVEL INSIGHTS</p>
-                            <h3 class="blog-title">How to <strong>choose</strong> a <strong>responsible</strong> tour operator</h3>
-                            <a href="#blog3" class="blog-link">READ STORY</a>
-                        </div>
-                    </div>
-                </div>
+
             </div>
         </div>
     </section>
+
+  
 
     <!-- Footer -->
     <footer class="footer">
@@ -621,6 +811,18 @@
                 </div>
             </div>
         </div>
+
+
+        <!-- Footer Bottom -->
+<div class="footer-bottom bg-dark text-white py-3">
+    <div class="container">
+        <div class="row align-items-center">
+           
+            
+        </div>
+    </div>
+</div>
+
     </footer>
 
     <!-- jQuery -->
@@ -751,5 +953,126 @@
             });
         });
     </script>
+    
+    <!-- Blog Slider JavaScript -->
+    <script>
+        // Blog Slider functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            let currentSlideIndex = 0;
+            const totalSlides = 6;
+            const slider = document.querySelector('.blog-slider');
+            
+            // Check if slider element exists before proceeding
+            if (!slider) {
+                console.log('Blog slider element not found');
+                return;
+            }
+            
+            function getSlideWidth() {
+                // Check if we're on desktop (3 slides visible) or mobile (1 slide visible)
+                return window.innerWidth >= 992 ? 100 / 3 : 100;
+            }
+            
+            function showSlide(index) {
+                const slideWidth = getSlideWidth();
+                let maxIndex;
+                
+                if (window.innerWidth >= 992) {
+                    // Desktop: show 3 at once, can move 3 positions
+                    maxIndex = 3;
+                } else {
+                    // Mobile: show 1 at once, can move 5 positions
+                    maxIndex = 5;
+                }
+                
+                if (index > maxIndex) {
+                    currentSlideIndex = 0;
+                } else if (index < 0) {
+                    currentSlideIndex = maxIndex;
+                } else {
+                    currentSlideIndex = index;
+                }
+                
+                // Move slider based on current slide width
+                slider.style.transform = `translateX(-${currentSlideIndex * slideWidth}%)`;
+            }
+            
+            // Make function globally available for onclick handlers
+            window.blogMoveSlide = function(direction) {
+                showSlide(currentSlideIndex + direction);
+            };
+            
+            // Handle window resize
+            window.addEventListener('resize', function() {
+                showSlide(currentSlideIndex);
+            });
+            
+            // Auto-advance slides every 4 seconds
+            setInterval(() => {
+                showSlide(currentSlideIndex + 1);
+            }, 4000);
+            
+            // Initialize first slide
+            showSlide(0);
+        });
+    </script>
+    
+    <!-- More Packages Slider JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            let currentMorePackagesSlide = 0;
+            const morePackagesSlider = document.querySelector('.more-packages-slider');
+            
+            // Check if slider element exists before proceeding
+            if (!morePackagesSlider) {
+                console.log('More packages slider element not found');
+                return;
+            }
+
+            function getMorePackagesSlideWidth() {
+                return window.innerWidth >= 992 ? 100 / 6 : 100; // 6 slides for desktop, 1 for mobile
+            }
+
+            function showMorePackagesSlide(index) {
+                const slideWidth = getMorePackagesSlideWidth();
+                let maxIndex;
+                
+                if (window.innerWidth >= 992) {
+                    maxIndex = 6; // 6 slides visible
+                } else {
+                    maxIndex = 1; // 1 slide visible
+                }
+
+                if (index > maxIndex) {
+                    currentMorePackagesSlide = 0;
+                } else if (index < 0) {
+                    currentMorePackagesSlide = maxIndex;
+                } else {
+                    currentMorePackagesSlide = index;
+                }
+
+                morePackagesSlider.style.transform = `translateX(-${currentMorePackagesSlide * slideWidth}%)`;
+            }
+
+            // Make function globally available for onclick handlers
+            window.morePackagesMoveSlide = function(direction) {
+                showMorePackagesSlide(currentMorePackagesSlide + direction);
+            };
+
+            // Handle window resize
+            window.addEventListener('resize', function() {
+                showMorePackagesSlide(currentMorePackagesSlide);
+            });
+
+            // Auto-advance slides every 4 seconds
+            setInterval(() => {
+                showMorePackagesSlide(currentMorePackagesSlide + 1);
+            }, 4000);
+
+            // Initialize first slide
+            showMorePackagesSlide(0);
+        });
+    </script>
+
 </body>
 </html> 
